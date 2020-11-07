@@ -24,38 +24,38 @@
             let computer = 0;
 
             if(playerSelection == "rock" && computerSelection == "rock"){
-                console.log("Egalite")
+                alert("Egalite - " + "computer choose - " + computerSelection)
 
             }
             else if (playerSelection == "rock" && computerSelection == "paper"){
-                console.log("You Lose! Paper beats Rock")
+                alert("You Lose! Paper beats Rock - "+ "computer choose - " + computerSelection)
                 ++computer;
             }
             else if (playerSelection == "rock" && computerSelection == "scissor"){
-                console.log("You won! Rock beats Scissor")
+                alert("You won! Rock beats Scissor - "+ "computer choose - " + computerSelection)
                 ++player;
             }
             else if (playerSelection == "paper" && computerSelection == "rock"){
-                console.log("You Lose! Rock beats Paper")
+                alert("You Lose! Rock beats Paper - "+ "computer choose - " + computerSelection)
                 ++computer;
             }
             else if (playerSelection == "paper" && computerSelection == "paper"){
-                console.log("Egalite")
+                alert("Egalite - "+ "computer choose - " + computerSelection)
             }
             else if (playerSelection == "paper" && computerSelection == "scissor"){
-                console.log("You Lose! Scissor beats Paper")
+                alert("You Lose! Scissor beats Paper - "+ "computer choose - " + computerSelection)
                 ++computer;
             }
             else if (playerSelection == "scissor" && computerSelection == "rock"){
-                console.log("You Lose! Rock beats Scissor")
+                alert("You Lose! Rock beats Scissor - "+ "computer choose - " + computerSelection)
                 ++computer;
             }
             else if (playerSelection == "scissor" && computerSelection == "paper"){
-                console.log("You Won! Scissor beats Paper")
+                alert("You Won! Scissor beats Paper - "+ "computer choose - " + computerSelection)
                 ++player;
             }
             else if (playerSelection == "scissor" && computerSelection == "scissor"){
-                console.log("Egalite")
+                alert("Egalite - "+ "computer choose - " + computerSelection)
             }
             if(player == computer){
             return 3;
