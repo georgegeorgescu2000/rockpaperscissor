@@ -1,0 +1,75 @@
+h1{
+    height: 50px;
+    width: 800px;
+   /* background: red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: serif;
+      
+}
+
+body {
+    background-color: linen;
+    font-family: serif;
+    
+  }
+button{
+    height: 80px;
+    width: 120px;
+
+}
+
+#button{
+  /*  background: red;*/
+    display: inline;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .07s ease;
+      
+}
+
+
+#score{
+    display: inline;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .07s ease;
+    
+      
+}
+
+#scorePlayer{
+  font-size: larger;
+  background-color: rgb(0, 217, 255);
+}
+
+#scoreComputer{
+  font-size: larger;
+  background-color: rgb(0, 217, 255);
+}
+
+
+#container{
+    /*  background: red;*/
+      display: inline;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+        
+  }

@@ -1,9 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <script>
+ 
+  <head>
+    <link rel="stylesheet" href="mystyle.css">
+    <title >
+      Play Rock, paper, scissor
+    </title>
+        <h1 class = "title">
+          Play Rock, paper, scissor
+      </h1>
+
+      
+      <div id="button">
+        <button id="btnrock" value = "rock">Choose rock</button>
+        <button id="btnpaper" value = "paper">Choose paper</button>
+        <button id="btnscissor" value = "scissor">Choose scissor</button>
+       
+      </div>
+
+      <div id="score">
+       
+        <button id="scorePlayer" value = "0">Player Score : </button>
+        <button id="scoreComputer" value = "0">Computer Score : </button>
+
+      </div>
+  </head>
+
+    <body>
+      
+    
+        <div id="container">
+          
+        </div>
+
+        
+    </body>
+   
+   
+   <script>
        
        
         function computerPlay(integer){
+            
             var computerSelection;    
             if(integer == 0){
                   computerSelection = "rock";
@@ -14,49 +52,268 @@
                 else if(integer == 2){
                     computerSelection = "scissor";
                 }
+                
             console.log(computerSelection);
             return computerSelection;
         }
 
         function playRound(playerSelection, computerSelection) {
-  // your code here!
-            let player = 0;
-            let computer = 0;
+              // your code here!
+             let player = 0;
+              let computer = 0;
 
-            if(playerSelection == "rock" && computerSelection == "rock"){
-                alert("Egalite - " + "computer choose - " + computerSelection)
-
-            }
+             if(playerSelection == "rock" && computerSelection == "rock"){
+              //  console.log("Egalite - " + "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = 'Egalite - ' + 'computer choose - ' + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(0) + parseInt(document.getElementById("scorePlayer").value);               
+                document.getElementById("scoreComputer").value= parseInt(0) + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML = document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML = document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+   
+             }
             else if (playerSelection == "rock" && computerSelection == "paper"){
-                alert("You Lose! Paper beats Rock - "+ "computer choose - " + computerSelection)
-                ++computer;
+             //   console.log("You Lose! Paper beats Rock - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "You Lose! Paper beats Rock - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(0)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(1)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML = document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML = document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                
             }
             else if (playerSelection == "rock" && computerSelection == "scissor"){
-                alert("You won! Rock beats Scissor - "+ "computer choose - " + computerSelection)
-                ++player;
+             //   console.log("You won! Rock beats Scissor - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "You won! Rock beats Scissor - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(1)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(0)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+               
             }
             else if (playerSelection == "paper" && computerSelection == "rock"){
-                alert("You Lose! Rock beats Paper - "+ "computer choose - " + computerSelection)
-                ++computer;
+             //   console.log("You Lose! Rock beats Paper - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "You Lose! Rock beats Paper - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);               
+                document.getElementById("scorePlayer").value= parseInt(0)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(1)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                
             }
             else if (playerSelection == "paper" && computerSelection == "paper"){
-                alert("Egalite - "+ "computer choose - " + computerSelection)
+            //    console.log("Egalite - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "Egalite - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(0)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(0)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
             }
             else if (playerSelection == "paper" && computerSelection == "scissor"){
-                alert("You Lose! Scissor beats Paper - "+ "computer choose - " + computerSelection)
-                ++computer;
+             //   console.log("You Lose! Scissor beats Paper - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "You Lose! Scissor beats Paper - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(0)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(1)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                
             }
             else if (playerSelection == "scissor" && computerSelection == "rock"){
-                alert("You Lose! Rock beats Scissor - "+ "computer choose - " + computerSelection)
-                ++computer;
+              //  console.log("You Lose! Rock beats Scissor - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "You Lose! Rock beats Scissor - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(0)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(1)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+               
             }
             else if (playerSelection == "scissor" && computerSelection == "paper"){
-                alert("You Won! Scissor beats Paper - "+ "computer choose - " + computerSelection)
-                ++player;
+              //  console.log("You Won! Scissor beats Paper - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "You Won! Scissor beats Paper - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(1)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(0)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                
             }
             else if (playerSelection == "scissor" && computerSelection == "scissor"){
-                alert("Egalite - "+ "computer choose - " + computerSelection)
+              //  console.log("Egalite - "+ "computer choose - " + computerSelection)
+                const p = document.createElement('p');
+                p.textContent = "Egalite - "+ "computer choose - " + computerSelection;
+                p.style.color = 'red';  
+                container.appendChild(p);
+                document.getElementById("scorePlayer").value= parseInt(0)  + parseInt(document.getElementById("scorePlayer").value);
+                document.getElementById("scoreComputer").value= parseInt(0)  + parseInt(document.getElementById("scoreComputer").value);
+                document.getElementById("scorePlayer").innerHTML =  document.getElementById("scorePlayer").value;               
+                document.getElementById("scoreComputer").innerHTML =  document.getElementById("scoreComputer").value;
+                if(document.getElementById("scoreComputer").innerHTML == '5'){
+                  alert('Computer Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                if(document.getElementById("scorePlayer").innerHTML == '5'){
+                  alert('Player Won');
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scorePlayer").innerHTML = "0";
+                  document.getElementById("scorePlayer").value = "0";
+                  document.getElementById("scoreComputer").innerHTML = "0";  
+                  document.getElementById("scoreComputer").value = "0"; 
+                }
+                
             }
+
             if(player == computer){
             return 3;
 
@@ -68,47 +325,86 @@
             else if (player < computer){
             return 2;
 
+
+            
             }
                 
         }
 
             
         
-       var game = 0;
-       let playerscore = 0;
-        let computerscore = 0;
-       
-       while (game < 5) {
-        const playerSelection = prompt().toLowerCase();
-        const computerSelection = computerPlay(Math.floor(Math.random() * 3));
-       /* console.log(playRound(playerSelection, computerSelection));*/
-        game++;
+      
 
-        if (playRound(playerSelection, computerSelection) == 1 ){
+
+          
+              const container = document.querySelector('#container');
+              const content = document.createElement('div');
+              content.classList.add('content');
+              container.appendChild(content);
+
+              const h2 = document.createElement('h2');                           
+              h2.textContent = 'Press the button to choose :';
+              h2.style.color = 'blue'; 
+              content.appendChild(h2);
+              
+
+              var game = 0;
+              let playerscore = 0;
+              let computerscore = 0;
+
+        
+
+                const btnrock = document.querySelector('#btnrock');
+                btnrock.addEventListener('click', () => {playRound(btnrock.value, computerPlay(Math.floor(Math.random() * 3)));
+                console.log(playRound())
+                game++;
+                });
+                
+                
+                
+                
+                const btnpaper = document.querySelector('#btnpaper');
+                btnpaper.addEventListener('click', () => {playRound(btnpaper.value, computerPlay(Math.floor(Math.random() * 3)));
+                                              
+                });
+
+
+                const btnscissor = document.querySelector('#btnscissor');
+                btnscissor.addEventListener('click', () => {playRound(btnscissor.value, computerPlay(Math.floor(Math.random() * 3)));
+                            
+                                
+                });
+           
+
+   /*     if (playRound() == 1 ){
         ++playerscore;
         }
-        else if(playRound(playerSelection, computerSelection) == 2){
+        else if(playRound() == 2){
         ++computerscore;    
        } 
-        else if(playRound(playerSelection, computerSelection) == 3){
+        else if(playRound() == 3){
         
        }
-    }
+    */
+
+
        if (playerscore > computerscore){
-       alert("You Won!      " + "Player -" + playerscore + " point " + " - " + "Computer -" + computerscore + " point ")
+       console.log("You Won!      " + "Player -" + playerscore + " point " + " - " + "Computer -" + computerscore + " point ")
        
                    
 
        }
        else if (playerscore == computerscore){
-        alert("Egalite      " + "Player -" + playerscore  + " point " + " - " + "Computer -" + computerscore + " point ")
+        console.log("Egalite      " + "Player -" + playerscore  + " point " + " - " + "Computer -" + computerscore + " point ")
         
        }
        else if (playerscore < computerscore){
-        alert("You Lose!      " + "Player -" + playerscore + " point " + " - " + "Computer -" + computerscore + " point ")
+        console.log("You Lose!      " + "Player -" + playerscore + " point " + " - " + "Computer -" + computerscore + " point ")
         
        }
    
 
     </script>
+
+
 </html>
